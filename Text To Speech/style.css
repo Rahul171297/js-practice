@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  font-family: "Ubuntu", sans-serif;
+  background-image: linear-gradient(
+    135deg,
+    rgba(150, 93, 233, 1) 10.8%,
+    rgba(99, 88, 238, 1) 94.3%
+  );
+}
+.wrapper {
+  display: flex;
+  height: 30rem;
+  padding: 1rem;
+  align-items: center;
+  border-radius: 0.75rem;
+  flex-direction: column;
+  justify-content: space-around;
+  width: clamp(20rem, 85vw, 30rem);
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0.5rem 1rem 0 rgba(54, 22, 109, 0.5);
+}
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: rgba(54, 22, 109, 1);
+}
+.form-group {
+  width: 100%;
+  display: flex;
+  row-gap: 0.5rem;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.form-group label {
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(52, 73, 94, 1);
+}
+#text,
+#voice {
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border-color: rgba(52, 73, 94, 1);
+}
+#text {
+  resize: none;
+  height: 7rem;
+}
+.submit {
+  border: 0;
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  cursor: pointer;
+  font-size: 1.1rem;
+  align-items: center;
+  border-radius: 0.5rem;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+  background-color: rgba(99, 88, 238, 1);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.submit:hover {
+  background-color: rgba(54, 22, 109, 1);
+}
