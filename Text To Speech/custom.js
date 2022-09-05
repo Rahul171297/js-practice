@@ -10,7 +10,6 @@ function voiceSpeech() {
     let option = document.createElement("option");
     option.text = voice.name;
     voicelist.add(option);
-    console.log(option);
   }
 }
 
