@@ -70,7 +70,7 @@
 // 😎 Expresssion => 5(Operand) +(Operator) 20(Operand)
 
 /**************************************************
-  Section 02 👉 Operators Types in Javascript
+  Section 04 👉 Operators Types in Javascript
 **************************************************/
 
 /**
@@ -80,7 +80,7 @@
   3. Comparison Operators
   4. Logical Operators
   5. String Operators
-  6. Conditional or Ternary Operators
+  6. Conditional(Ternary) Operators
 **/
 
 
@@ -134,7 +134,7 @@
 
 // 4️⃣ Logical operators => Logical operators are typically used with Boolean (logical) values; when they are, they return a Boolean value.
 
-var a = 30, b = -20;
+// var a = 30, b = -20;
 
 // Logical AND (&&) => The logical AND (&&) operator (logical conjunction) for a set of operands is true if and only if all of its operands are true.
 
@@ -144,588 +144,430 @@ var a = 30, b = -20;
 
 // Logical OR (||) => The logical OR (||) operator (logical disjunction) for a set of operands is true if and only if one or more of its operands is true.
 
-console.log((a < b) || (b > 0));
-console.log((a < b) || (b > 0) || (b > 0));
+// console.log((a > b) || (b > 0)); // Here output of 1st expression is "True" so overall output will be "True".
+// console.log((a < b) || (b > 0) || (b > 0)); // Here output for all the expressions are "False" so overall output will be "False".
 
 // Logical NOT (!) => The logical NOT (!) operator (logical complement, negation) takes truth to falsity and vice versa.
 
-// console.log(!((a>0) || (b<0)));
+// console.log(!(a > b)); // Here output of this expression should be "True" but because of Logical Not Operator output will be "False".
+// console.log(!false);
 // console.log(!true);
 
 
 // 5️⃣ String Concatenation(operators) => The concatenation operator (+) concatenates two string values together, returning another string that is the union of the two operand strings.
 
-
-// console.log("Hello World");
-// console.log("Hello " +  "World");
-
 // var myName = "Rahul";
 // console.log(myName + " Kumar");
 
 
-// 😳 4 Challenge Time 
-// What will be the output of 3**3? 
+// 🏁 Challenge Time 
+// What will be the output of 3**3?
 // What will be the output, when we add a number and a string?
 // Write a program to swap two numbers?
 // Write a program to swap two numbers without using third variable?
 
 // sol 1: ✔
-// console.log(9**2); // 9*9
+// console.log(3**3); // Exponentiation Operator => It is used to get the power value of 1st Operand
 // console.log(10 ** -1); 1/10
 
-
 // sol 2:  ✔
-// console.log(5 + "thapa");
+// console.log(5 + "Rahul");
 
-// sol 3: ✔ 
+// sol 3: ✔
+// var a = 5, b = 10; // output b = 5; a = 10
 
-// var a = 5;
-// var b = 10;
-
-// output b=5; a=10
-
-// var c = b; //c = 10
-// b = a; // b = 5;
-// a = c;
-
-// console.log("the value of a is " + a);
-// console.log("the value of b is " + b);
-
+// var c = b; // c = b(10)
+// var b = a; // b = a(5)
+// var a = c; // a = c(10)
+// console.log("The value of a is " + a);
+// console.log("The value of b is " + b);
 
 // sol 4: ✔
+// var a = 5, b = 10; // output b = 5; a = 10
 
-// var a = 5;
-// var b = 10;
-
-// // output b=5; a=10
-
-// a = a + b; // a = 15
-// b = a - b; // b = 5; 
-// a = a - b; // a = 10;
-
-// console.log("the value of a is " + a);
-// console.log("the value of b is " + b);
+// var a = a + b; // a = 15
+// var b = a - b; // b = 5; 
+// var a = a - b; // a = 10;
+// console.log("The value of a is " + a);
+// console.log("The value of b is " + b);
 
 
 
 
 // 🙋‍👨‍🏫 Interview Question 4 🙋‍👨‍🏫
-// What is the Difference between == vs === ?
+// What is the Difference between == vs === ? => The main difference between the == and === operator in javascript is that the == operator does the type conversion of the operands before comparison which means it will only compare the Values, whereas the === operator compares the values as well as the data types of the operands.
 
+// var num1 = 5, num2 = '5';
 
-// sol 
-// var num1 = 5;
-// var num2 = '5';
-
-// console.log(typeof(num1));
-// console.log(typeof(num2));
+// console.log(typeof(num1)); // Number
+// console.log(typeof(num2)); // String
 
 // console.log(num1 == num2 );
-
-// var num1 = 5;
-// var num2 = '5';
-
-// console.log(typeof(num1));
-// console.log(typeof(num2));
-// console.log(num2);
-
 // console.log(num1 === num2 );
 
 
+/**************************************************
+  Section 05 👉 Control Statements and Loops
+**************************************************/
 
-// ************************************************************
+/**
+  JavaScript has 9 different Control Statements and Loops
+  1. If Else
+  2. If Else If
+  3. Switch Statement
+  4. While (Loop)
+  5. Do While (Loop)
+  6. For (Loop)
+  7. For In(Loop)
+  8. For Of(Loop)
+  9. Conditional(Ternary) Operators
+**/
 
 
-/**** Section 6👉 Control Statement - 
- * 
- * 1️⃣If...Else */
-// The if statement executes a statement if a specified condition is truthy. 
-// If the condition is falsy, another statement can be executed.
+//  1️⃣If...Else => The if statement executes a statement if a specified condition is true. If the condition is false, else statement will be executed.
 
-
-// if raining = raincoat
-// else no raincoat
-
+// Tomorrow if it is raining take a raincoat else no need to take a raincoat.
 
 // var tomr = 'sunny';
-
-// if(tomr == 'rain'){
-//   console.log('take a raincoat');
-// }else{
+// if(tomr == 'rain') {
+//   console.log('Take a raincoat');
+// } else {
 //   console.log('No need to take a raincoat');
 // }
 
 
-
-
-// 🤩Challenge Time 
+// 🏁 Challenge Time 
 // write a program that works out whether if a given year is a leap year or not?
 // A normal year has 365 days, leap years have 366, with an extra day in February.
 
-
-// var year = 2020;
-// debugger;
-// if(year % 4 === 0){
-//   if(year % 100 === 0){
-//     if(year % 400 === 0){
-//       console.log("The year " + year + " is a leap year");
-//     }else{
-//       console.log("The year " + year + " is not a leap year");
+// var year = 2440;
+// if (year % 4 === 0) {
+//   if (year % 100 === 0) {
+//     if (year % 400 === 0) {
+//       console.log("The year " + year + " is a leap year.");
+//     } else {
+//       console.log("The year " + year + " is not a leap year.");
 //     }
-//   }else{
-//     console.log("The year " + year + " is a leap year");
+//   }else {
+//     console.log("The year " + year + " is a leap year.");
 //   }
-// }else{
-//   console.log("The year " + year + " is not a leap year");
+// } else {
+//   console.log("The year " + year + " is not a leap year.");
 // }
 
 
+// What is truthy and falsy values in Javascript? => There are total 5 falsy values in javascript 👉 0, "", undefined, null, NaN and false
 
-
-// What is truthy and falsy values in Javascript?
-
-// we have total 5 falsy values in javascript
-// 👉 0,"",undefined,null,NaN,false** is false anyway
-
-// if(score = 5){
+// if (score = 0) {
 //   console.log("OMG, we loss the game 😭");
-// }else{
+// } else {
 //   console.log("Yay, We won the game 😀");
 // }
-
-
-
-
-// 2️⃣Conditional (ternary) operator
-
-// The conditional (ternary) operator is the only JavaScript operator 
-// that takes three operands
-// var age = 17;
-// if(age >= 18){
-//   console.log("you are eligible to vote");
-// }else{
-//   console.log("you are not eligible to vote");
+// // As 0 is a Falsy value, it will directly move to the else part.
+// if (score = 5) {
+//   console.log("Yay, We won the game 😀");
+// } else {
+//   console.log("OMG, we loss the game 😭");
 // }
 
-// var age = 18;
-// console.log((age >= 18) ? "you can vote" : "you can't vote");
+
+// 2️⃣Conditional (ternary) operator => The conditional (ternary) operator is the only JavaScript operator that takes three operands.
+
+// var myAge = 26;
+// if (myAge >= 18) {
+//   console.log("You are eligible to vote.");
+// } else {
+//   console.log("You are not eligible to vote.");
+// }
+
+// console.log((myAge >= 18) ? "You are eligible to vote." : "You are not eligible to vote."); // Ternary Opertator
+// // Variable Name (var myAge;) = Condition (myAge >= 18) ? Value 1 (True Case) : Value 2 (False Case)
 
 
+// 3️⃣ Switch Case => Evaluates an expression, matching the expression's value to a case clause, and executes statements associated with that case.
 
-
-// 3️⃣ switch Statement
-// Evaluates an expression, matching the expression's value to a 
-// case clause, and executes statements associated with that case.
-
-// 1st without break statment 
 // Find the Area of circle, triangle and rectangle?
 
-// var area = "square" ;
-// var PI = 3.142, l=5, b=4, r=3;
+// var area = "circle", PI = 3.142, l = 5, b = 4, r = 3;
 
-// if(area == "circle"){
-//   console.log("the area of the circle is : " + PI*r**2);
-// }else if(area == "triangle"){
-//   console.log("the area of the triangle is : " + (l*b)/2);
-// }else if(area == "rectangle"){
-//   console.log("the area of the rectangle is : " + (l*b));
-// }else{
-//   console.log("please enter valid data");
+// if (area == "circle") {
+//   console.log("The area of circle is : " + PI * r ** 2);
+// } else if(area == "triangle") {
+//   console.log("The area of triangle is : " + (l * b) / 2);
+// } else if(area == "rectangle") {
+//   console.log("The area of rectangle is : " + (l * b));
+// } else {
+//   console.log("Please enter valid data");
 // }
 
-// var area = "dsfsad" ;
-// var PI = 3.142, l=5, b=4, r=3;
+// 1st without break statment
+// switch(area) {
+//   case 'circle': console.log("The area of circle is : " + PI * r ** 2);
+//   case 'triangle': console.log("The area of triangle is : " + (l * b) / 2);
+//   case 'rectangle': console.log("The area of rectangle is : " + (l * b));
+//   default: console.log("Please enter valid data");
+// }
+// 🤗 Continue => Terminates execution of the statements in the current iteration of the current or labeled loop, and continues execution of the loop with the next iteration.
 
-// switch(area){
-//   case 'circle': 
-//     console.log("the area of the circle is : " + PI*r**2);
-//     break;
-
-//   case 'triangle':
-//     console.log("the area of the triangle is : " + (l*b)/2);
-//     break;
-
-//   case 'rectangle':
-//     console.log("the area of the rectangle is : " + (l*b));
-//     break;
-
-//   default:
-//     console.log("please enter valid data");
+// 2nd with break statment
+// switch(area) {
+//   case 'circle': console.log("The area of circle is : " + PI * r ** 2);
+//   break;
+//   case 'triangle': console.log("The area of triangle is : " + (l * b) / 2);
+//   break;
+//   case 'rectangle': console.log("The area of rectangle is : " + (l * b));
+//   break;
+//   default: console.log("Please enter valid data");
 // }   
+// 🤗 Break => Terminates the current loop, switch, or label statement and transfers program control to the statement following the terminated statement.
 
 
+// 4️⃣ While (Loop) => The while (loop), first do the condition evaluation and then creates a loop that executes a statement as long as the test condition is true.
 
-// 🤗break
-// Terminates the current loop, switch, or label 
-// statement and transfers 
-// program control to the statement following the terminated statement.
-
-
-// 🤗continue
-// Terminates execution of the statements in the current iteration of the 
-// current or labeled loop, and continues execution of the loop with the 
-// next iteration.
-
-
-
-
-
-// 4️⃣ While Loop Statement
-// The while statement creates a loop that executes a specified statement 
-// as long as the test condition evaluates to true. 
-
-// var num=20;
-// // block scope 
-// while(num <= 10){
-//   console.log(num); //infinte loop
+// var num = 0;
+// while(num <= 20) {
+//   console.log(num);
 //   num++;
 // }
 
-// 5️⃣ Do-While Loop Statement
 
-// var num = 20;
+// 5️⃣ Do-While (Loop) => The do-while (loop), first creates the loop that executes a statement for at least 1 time and then do the condition evaluation for next loop.
+
+// var num = 0;
 // do{
-//   debugger;
-//   console.log(num); //infinte loop
+//   console.log(num);
 //   num++;
 // }while(num <= 10);
 
-// 6️⃣ For Loop 
 
-// for(var num = 0; num <= 10; num++){
-//     debugger;
-//     console.log(num);
+// 6️⃣ For (Loop) => for(initializer; condition, iteration) { Code to be executed }
+
+// for(var num = 0; num <= 10; num++) {
+//   console.log(num);
 // }
 
 
-// 😀6: challenge Time 🏁
+// 🏁 Challenge Time
 // JavaScript program to print table for given number (8)?
 
-// output :  8 * 1 = 8 
-        //   8 * 2 = 16(8*2)
-        //  => 8 * 10 = 80
+// Output : 8 * 1 = 8 > 8 * 10 = 80
 
-// for(var num = 1; num<= 10; num++){
-//     var tableOf = 12;  
+// for(var num = 1; num <= 10; num++) {
+//   var tableOf = 8;  
 //   console.log(tableOf + " * " + num + " = " + tableOf * num);
 // }
 
 
-// ************************************************************
+/**************************************************
+  Section 06 👉 Functions in Javascript
+**************************************************/
 
-/**** Section 5 👉 Functions in JavaScript ****/
+//  1️⃣ Function Definition => A JavaScript function is a block of code designed to perform a particular task. Before we use a function, we need to define it. A function definition (also called a function declaration, or function statement) consists of the function keyword, followed by:
+// 🔸 The name of the function.
+// 🔸 A list of parameters to the function, enclosed in parentheses() and separated by commas.
+// 🔸 The JavaScript statements that define the function, enclosed in curly brackets{...}.
 
-// A JavaScript function is a block of code designed to perform a particular task.
-
-
-
-//  1️⃣Function Definition 
-
-// Before we use a function, we need to define it. 
-
-// A function definition (also called a function declaration, or function statement) 
-// consists of the function keyword, followed by:
-
-// The name of the function.
-// A list of parameters to the function, enclosed in parentheses and separated by commas.
-// The JavaScript statements that define the function, enclosed in curly brackets, {...}.
-
-
-// var a = 10;
-// var b = 20;
-// var sum = a+b;
+// var a = 10, b = 20, sum = a + b;
 // console.log(sum);
 
+// function sum() {
+//   var a = 10, b = 40;
+//   var total = a + b;
+//   console.log(total);
+// } // Function Defined
+
+
+// 2️⃣ Calling functions => Defining a function does not execute it. A JavaScript function is executed when "something" invokes it (calls it).
 
 // function sum(){
 //   var a = 10, b = 40;
-//   var total = a+b;
+//   var total = a + b;
 //   console.log(total);
 // }
-// // 
-
-// 2️⃣Calling functions
-// Defining a function does not execute it.
-// A JavaScript function is executed when "something" invokes it (calls it).
+// sum(); // Function Invoked(Called)
 
 
-// function sum(){
-//   var a = 10, b = 40;
-//   var total = a+b;
+// 3️⃣ Function Parameter vs Function Arguments => Function parameters are the names listed in the function's definition. Function arguments are the real values passed when the function is invoked.
+
+// function sum(a , b) { // "a" and "b" here are the Function Parameters
+//   var total = a + b;
 //   console.log(total);
 // }
 
 // sum();
-
-
-
-// 3️⃣ Function Parameter vs Function Arguments 
-// Function parameters are the names listed in the function's definition. 
-// Function arguments are the real values passed to the function.
-
-
-// function sum(a,b){
-//   var total = a+b;
-//   console.log(total);
-// }
-
-// sum();
-// sum(20,30);
-// sum(50,50);
-// sum(5,6)
+// sum(20 , 30); // "20" and "30" here are the Function Arguments
+// sum(50 , 50);
+// sum(5 , 6);
 
 
 // 🙋‍👨‍🏫 Interview Question 🙋‍👨‍🏫 
+// Why Functions? => You can reuse code i.e., define the code once, and use it many times. You can use the same code many times with different arguments, to produce different results.
 
-// Why Functions? 
+/******************** OR ********************/
 
-// You can reuse code: Define the code once, and use it many times.
-// You can use the same code many times with different arguments, 
-// to produce different results.
+// A function is a group of reusable code which can be called anywhere in your program. This eliminates the need of writing the same code again and again.
 
-  // OR
-
-  // A function is a group of reusable code which can be called anywhere 
-// in your program. This eliminates the need of writing the same code 
-// again and again.
-
-// DRY => do not repeat yourself
+// DRY codes => do not repeat yourself codes
 
 
+// 4️⃣ Function expressions => "Function expressions simply means create a function and put it into the variable."
 
-
-
-
-// 4️⃣ Function expressions
-// "Function expressions simply means 
-// create a function and put it into the variable "
-
-// function sum(a,b){
-//   var total = a+b;
+// function sum(a , b) {
+//   var total = a + b;
 //   console.log(total);
 // }
 
-// var funExp = sum(5,15);
+// var funExp = sum(5 , 15);
 
 
+// 5️⃣ Return Keyword => When JavaScript reaches a return statement, the function will stop executing. Functions often compute a return value. The return value is "returned" back to the "caller".
 
-// 5️⃣ Return Keyword
-// When JavaScript reaches a return statement, 
-// the function will stop executing.
-
-// Functions often compute a return value.
-// The return value is "returned" back to the "caller"
-
-
-// function sum(a,b){
-//   return total = a+b;
+// function sum(a , b) {
+//   return total = a + b;
 // }
 
-// var funExp = sum(5,25);
-
+// var funExp = sum(5 , 25);
 // console.log('the sum of two no is ' + funExp );
 
 
-// 6️⃣ Anonymous Function
+// 6️⃣ Anonymous Function => A function expression is similar to and has the same syntax as a function declaration One can define "named" function expressions (where the name of the expression might be used in the call stack for example) or "anonymous" function expressions.
 
-// A function expression is similar to and has the same syntax 
-// as a function declaration One can define "named" 
-// function expressions (where the name of the expression might 
-// be used in the call stack for example) 
-// or "anonymous" function expressions.
-
-
-// var funExp = function(a,b){
-//   return total = a+b;
+// var funExp = function(a , b) {
+//   return total = a + b;
 // }
 
-// var sum = funExp(15,15);
-// var sum1 = funExp(20,15);
-
+// var sum = funExp(15 , 15), sum1 = funExp(20 , 15);
 // console.log(sum > sum1 );
 
 
+/**************************************************
+  👻 Now It's Time for Modern JavaScript 😍😍
+**************************************************/
 
+// 1️⃣ LET vs CONST vs VAR
 
-// ************************************************************
+// "var" are Function Scope while "let" and "const" are Block Scope.
+// Variables deifined with "var" and "let" keywords can be changed later while variables deifined with "const" can not be changed later.
 
-
-// 👻 Now It's Time for Modern JavaScript 😍😍 
-
-// 🙏🙏 Features of ECMAScript 2015 also known as ES6 🙏🙏
-
-// 1️⃣ LET VS CONST  vs  VAR
-
-// var myName = "thapa technical";
+// var myName = "Rahul Kumar";
+// myName = "Rahul Roy"; // Value changed
 // console.log(myName);
 
-// myName = "vinod thapa";
+// let myName = "Rahul Kumar";
+// myName = "Rahul Roy"; // Value changed
 // console.log(myName);
 
-// let myName = "thapa technical";
+// const myName = "Rahul Kumar";
+// myName = "Rahul Roy"; // Will Get Error
 // console.log(myName);
-
-// myName = "vinod thapa";
-// console.log(myName);
-
-
-// const myName = "thapa technical";
-// console.log(myName);
-
-// myName = "vinod thapa";
-// console.log(myName);
-
-
 
 // function biodata() {
-//   const myFirstName = "Vinod";
+//   var myFirstName = "Rahul";
 //   console.log(myFirstName);
-
-//   if(true){
-//     const myLastName = "thapa";
+//   if(true) {
+//     var myLastName = "Kumar";
+//     console.log(myLastName);
 //   }
-
-//   // console.log('innerOuter ' + myLastName);
+//   console.log('innerOuter ' + myFirstName + " " + myLastName);
 // }
-
-// console.log(myFirstName);
-
 // biodata();
 
 
-// var => Function scope 
-// let and const => Block Scope 
+// 2️⃣ Template Literals (Template strings) => Template Literals use back-ticks (``) rather than the quotes ("") to define a string. Template literals provide an easy way to interpolate variables and expressions into strings. The method is called string interpolation.
 
+// JavaScript program to print table for given number (8)
+// Output : 8 * 1 = 8 > 8 * 10 = 80
 
-
-
-
-// 2️⃣ Template literals (Template strings) 
-
-// JavaScript program to print table for given number (8)?
-
-// output :  8 * 1 = 8 
-        //   8 * 2 = 16(8*2)
-        //  => 8 * 10 = 80
-
-// for(let num = 1; num<= 10; num++){
-//     let tableOf = 12;  
-//   // console.log(tableOf + " * " + num + " = " + tableOf * num);
-//   console.log( ` ${tableOf} * ${num} = ${tableOf * num}` );
+// for(let num = 1; num <= 10; num++) {
+//   let tableOf = 8;
+//   // console.log(tableOf + " * " + num + " = " + tableOf * num); // String Concatenation
+//   console.log(`${tableOf} * ${num} = ${tableOf * num}`); // Template Literals
 // }
 
 
+// 3️⃣  Default Parameters => Default function parameters allow named parameters to be initialized with default values if no value or undefined is passed.
 
-
-
-
-
-
-// 3️⃣  Default Parameters
-// Default function parameters allow named parameters to be 
-// initialized with default values if no value or undefined is passed.
-
-// function mult(a,b=5){
-//   return a*b;
+// function mult(a , b = 5){
+//   return a * b;
 // }
 
 // console.log(mult(3));
 
 
+// 4️⃣ Destructuring in ES6 => The destructuring assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables.
 
+//  ➡ Array Destructuring  🏁
 
-// 4️⃣ Destructuring in ES6
-// The destructuring assignment syntax is a JavaScript expression 
-// that makes it possible to unpack values from arrays, 
-// or properties from objects, into distinct variables.
+// const myBioData = ['vinod', 'thapa', 26];
 
-  //  ➡ Array Destructuring  🏁
+// let myFName = myBioData[0];
+// let myLName = myBioData[1];
+// let myAge = myBioData[2];
 
-  // const myBioData = ['vinod', 'thapa', 26];
-
-  // let myFName = myBioData[0];
-  // let myLName = myBioData[1];
-  // let myAge = myBioData[2];
-  
 // let [myFName,myAge, myLName] = myBioData;
 // console.log(myAge);
 
-  // we can add values too 
-  
-  // let [myFName,myLName,myAge, myDegree="MCS"] = myBioData;
-  // console.log(myDegree);
+// we can add values too 
+
+// let [myFName,myLName,myAge, myDegree="MCS"] = myBioData;
+// console.log(myDegree);
 
 
+// ➡ Object destructuring 🏁
+// const myBioData = {
+//   myFname : 'vinod',
+//   myLname : 'thapa',
+//   myAge : 26
+// }
 
-  // ➡ Object destructuring 🏁
-  // const myBioData = {
-  //   myFname : 'vinod',
-  //   myLname : 'thapa',
-  //   myAge : 26
-  // }
+// let age = myBioData.age;
+// let myFname = myBioData.myFname;
 
-  // let age = myBioData.age;
-  // let myFname = myBioData.myFname;
-
-  // let {myFname,myLname,myAge, myDegree="MCS"} = myBioData;
-  // console.log(myLname);
-
-
-
+// let {myFname,myLname,myAge, myDegree="MCS"} = myBioData;
+// console.log(myLname);
 
 
 // 5️⃣ Object Properties 
 
 // ➡ we can now use Dynamic Properties 
 
-      // let myName = "vinod";
-      // const myBio = {
-      //   [myName] : "hello how are you?",
-      //   [20 + 6] : "is my age"
-      // }
+// let myName = "vinod";
+// const myBio = {
+//   [myName] : "hello how are you?",
+//   [20 + 6] : "is my age"
+// }
 
-      // console.log(myBio);
+// console.log(myBio);
 
-  // ➡ no need to write key and value, if both are same 
+// ➡ no need to write key and value, if both are same 
 
-  // let myName = "vinod thapa";
-  // let myAge = 26;
+// let myName = "vinod thapa";
+// let myAge = 26;
 
-  // const myBio = {myName,myAge}
+// const myBio = {myName,myAge}
 
-  // console.log(myBio);
-
-
+// console.log(myBio);
 
 
- 
-// 6️⃣ Fat Arror Function 
+// 6️⃣ Fat Arrow Function
 
 // 👻 Normal Way of writing Function  
 
 // console.log(sum()); 
 
 // function sum() {
-//   let a = 5; b = 6;
+//   let a = 5, b = 6;
 //   let sum = a+b;
-//  return `the sum of the two number is ${sum}`;
+//   return `the sum of the two number is ${sum}`;
 // }
 
 // 👻 How to convert in into Fat Arrow Function 
 
-// const sum = () => `the sum of the two number is ${(a=5)+(b=6)}`;
-
-// console.log(sum()); 
-
+// const sum = () => `the sum of the two number is ${ (a = 5) + (b = 6) }`;
+// console.log(sum());
 
 
-
-
-
-
-
-
-// 7️⃣Spread Operator
+// 7️⃣ Spread Operator
 
 // const colors = ['red', 'green', 'blue', 'white', 'pink'];
 
@@ -749,7 +591,6 @@ console.log((a < b) || (b > 0) || (b > 0));
 // console.log(2**3); 
 
 
-
 // ES8 Features 
 
 // String padding
@@ -767,7 +608,6 @@ console.log((a < b) || (b > 0) || (b > 0));
 // // // console.log( Object.values(person) );
 // const arrObj =  Object.entries(person);
 // console.log(Object.fromEntries(arrObj));
-
 
 
 // ES2018
@@ -806,224 +646,106 @@ console.log((a < b) || (b > 0) || (b > 0));
 // console.log(x);
 
 
+/**************************************************
+  Section 07 👉 Arrays in JavaScript
+**************************************************/
+
+// Array => An array is a special variable, which can hold more than one value. When we feel like storing multiple values in one variable then instead of var, we will use an Array. In JavaScript, we have an Array class, and arrays are the prototype of this class.
+// Example => var myFriends = ['ramesh',22,male,'arjun',20,male,'vishal',true, 52];
 
 
+// 1️⃣ Traversal in array => Navigate through an array.
 
-// ************************************************************
+// var myFriends = ['Rahul','Ramesh','Arjun','Vishal'];
+// console.log(myFriends); // If we want to get the all the data at a time.
+// console.log(myFriends[0]); // If we want to get the single data at a time in First to Last order.
+// console.log(myFriends[myFriends.length - 1]); // If we want to get the single data at a time in Last to First order.
+// console.log(myFriends.length); // If we want to check the length of elements of an array.
 
-
-
-/**** Section 7👉 Arrays in JavaScript  ****/
-
-// When we use var, we can stored only one value at a time. 
-// var friend1 = 'ramesh';
-// var friend2 = 'arjun';
-// var friend3 = 'vishal';
-
-// var myFriends = ['ramesh',22,male,'arjun',20,male,'vishal',true, 52];
-
-// When we feel like storing multiple values in one variable then 
-// instead of var, we will use an Array.
-
-// In JavaScript, we have an Array class, and 
-// arrays are the prototype of this class. 
-
-// example 🏁
-
-
-// var myFriends = ['ramesh',22,male,'arjun',20,male,'vishal',true, 52];
-
-
-
-
-
-// 1️⃣ Array Subsection 1 👉 Traversal in array✌ 
-// navigate through an array
-
-// if we want to get the single data at a time  and also 
-// if we want to change the data 
-
-
-// var myFriends = ['vinod','ramesh','arjun','vishal'];
-
-// console.log(myFriends[myFriends.length - 1]);
-
-// if we want to check the length of elements of an array 
-
-// console.log(myFriends.length);
-
-// we use for loop to navigate 
-
-// var myFriends = ['vinod','ramesh','arjun','vishal'];
-// for(var i=0; i<myFriends.length; i++){
+// for(var i = 0; i < myFriends.length; i++) { // We use "for" loop to navigate
 //   console.log(myFriends[i]);
 // }
 
-// After ES6 we have for..in and for..of loop too 
+// After ES6 we have "for in" and "for of" loop too
 
-// var myFriends = ['vinod','ramesh','arjun','vishal'];
-
-// for(let elements in myFriends){
+// for(let elements in myFriends) { // We use "for in" loop to navigate
+//   console.log(elements);
+// }
+// for(let elements of myFriends) { // We use "for of" loop to navigate
 //   console.log(elements);
 // }
 
-// for(let elements of myFriends){
-//   console.log(elements);
-// }
-
-// Array.prototype.forEach() 🙋‍♂️
-// Calls a function for each element in the array.
-
-// var myFriends = ['vinod','ramesh','arjun','vishal'];
+// Array.prototype.forEach() 🙋‍♂️ => Calls a function for each element in the array.
 
 // myFriends.forEach(function(element, index, array) {
-//       console.log(element + " index : " +
-//         index + " " + array);
+//   console.log(element + " index : " + index + " " + array);
 // });
-
 // myFriends.forEach((element, index, array) => {
-//   console.log(element + " index : " +
-//     index + " " + array);
+//   console.log(element + " index : " + index + " " + array);
 // });
 
 
+// 2️⃣ Searching and Filter in an Array 
+
+// 🙋‍♂️ Array.prototype.indexOf() => Returns the first (least) index of an element within the array equal to an element, or -1 if none is found. It search the element from the 0th index number.
+// var myFriendNames = ["Rahul", "Kumar", "Roy", "Web Designer", "Rahul", "UI Developer"];
+// console.log(myFriendNames.indexOf("Rahul"));
+// console.log(myFriendNames.indexOf("Rahul", 3));
 
 
-// 2️⃣ Array Subsection 2 👉 Searching and Filter in an Array 
-
-// Array.prototype.indexOf() 🙋‍♂️
-
-// Returns the first (least) index of an element within the array equal 
-// to an element, or -1 if none is found. It search the element from the 
-// 0th index number 
-
-// var myFriendNames = ["vinod","bahadur","thapa","thapatechnical","thapa"];
-
-// console.log(myFriendNames.indexOf("Thapa", 3));
+// 🙋‍♂️ Array.prototype.lastIndexOf() => Returns the last (greatest) index of an element within the array equal to an element, or -1 if none is found. It search the element last to first.
+// var myFriendNames = ["Rahul", "Kumar", "Roy", "Web Designer", "Rahul", "UI Developer"];
+// console.log(myFriendNames.lastIndexOf("Rahul"));
+// console.log(myFriendNames.lastIndexOf("Rahul", 3));
 
 
+// 🙋‍♂️ Array.prototype.includes() => Determines whether the array contains a value, returning true or false as appropriate.
+// var myFriendNames = ["Rahul", "Kumar", "Roy", "Web Designer", "Rahul", "UI Developer"];
+// console.log(myFriendNames.includes("Rahul", 2));
+// console.log(myFriendNames.includes("UI Designer"));
 
 
-
-// Array.prototype.lastIndexOf() 🙋‍♂️
-// Returns the last (greatest) index of an element within the array equal 
-// to an element, or -1 if none is found. It search the element last to first
-
-// var myFriendNames = ["vinod","bahadur","thapa","thapatechnical","thapa"];
-
-// console.log(myFriendNames.lastIndexOf("Thapa",3));
-
-
-
-
-
-
-
-// Array.prototype.includes() 🙋‍♂️
-// Determines whether the array contains a value, 
-// returning true or false as appropriate.
-
-// var myFriendNames = ["vinod","bahadur","thapa","thapatechnical"];
-
-// console.log(myFriendNames.includes("thapa"));
-
-
-
-
-
-
-
-
-// Array.prototype.find() 🙋‍♂️
-
+// 🙋‍♂️ Array.prototype.find() => Returns the found element in the array, if some element in the array satisfies the testing function, or undefined if not found. Only problem is that it return only one (Least Index) element.
 // arr.find(callback(element[, index[, array]])[, thisArg])
 
-// Returns the found element in the array, if some element in the 
-// array satisfies the testing function, or undefined if not found.
-// Only problem is that it return only one element
-
-// const prices = [200,300,350,400,450,500,600];
-
-// price < 400
-// const findElem = prices.find((currVal) =>  currVal < 400 );
+// const prices = [ 200, 300, 350, 400, 450, 500, 600 ];
+// const findElem = prices.find((currVal) =>  currVal < 400); // price < 400
 // console.log(findElem);
-
-// console.log(  prices.find((currVal) => currVal > 1400 )  );
-
+// console.log(prices.find((currVal) => currVal > 1200));
 
 
-// // **********************************************************************
-
-// // 👉 // 🤩 SUBSCRIBE TO THAPA TECHNICAL YOUTUBE CHANNEL 🤩
-//  👉 // 🤩  https://www.youtube.com/channel/UCwfaAHy4zQUb2APNOGXUCCA
-
-// // **********************************************************************
+// 🙋‍♂️ Array.prototype.findIndex() => Returns the found index in the array, if an element in the array satisfies the testing function, or -1 if not found.
+// console.log(prices.findIndex((currVal) => currVal > 400));
+// console.log(prices.findIndex((currVal) => currVal > 1200));
 
 
-
-
-// Array.prototype.findIndex() 🙋‍♂️
-
-// Returns the found index in the array, if an element in the 
-// array satisfies the testing function, or -1 if not found.
-
-
-// console.log(  prices.findIndex((currVal) => currVal > 1400 )  );
-
-
-
-
-// Array.prototype.filter() 🙋‍♂️
-
-// Returns a new array containing all elements of the calling 
-// array for which the provided filtering function returns true.
-
-// const prices = [200,300,350,400,450,500,600];
-
-// // price < 400
+// 🙋‍♂️ Array.prototype.filter() => Returns a new array containing all elements of the calling array for which the provided filtering function returns true.
+// const prices = [ 200, 300, 350, 400, 450, 500, 600 ];
+// const priceTag = prices.filter((elem, index) => {
+//   return elem < 400;
+// })
+// console.log(priceTag);
 // const newPriceTag = prices.filter((elem, index) => {
-//   return elem > 1400;
+//   return elem > 1200;
 // })
 // console.log(newPriceTag);
 
 
+// 3️⃣ How to sort an Array?
 
-
-// 3️⃣ Array Subsection 3 👉 How to sort an Array
-
-// Array.prototype.sort() 🙋‍♂️
-
-// The sort() method sorts the elements of an array in place and 
-//returns the sorted array. The default sort order is ascending, built 
-//upon converting the elements into strings, 
-// then comparing their sequences of UTF-16 code units values.
+// 🙋‍♂️ Array.prototype.sort() => The sort() method sorts the elements of an array in place and returns the sorted array. The default sort order is ascending, built upon converting the elements into strings, then comparing their sequences of UTF-16 code units values.
 
 // const months = ['March', 'Jan', 'Feb', 'April' , 'Dec', 'Nov'];
-
 // console.log(months.sort());
 
-// const array1 = [1, 30, 4, 21, 100000, 99];
-// console.log(array1.sort());
+// const randomNum = [1, 30, 4, 21, 100, 99];
+// console.log(randomNum.sort());
+
+// However, if numbers are sorted as strings, "25" is bigger than "100", because "2" is bigger than "1".
+// Because of this, the sort() method will produce an incorrect result when sorting numbers.
 
 
-
-
-
-
-
-// However, if numbers are sorted as strings, 
-// "25" is bigger than "100", because "2" is bigger than "1".
-
-// Because of this, the sort() method will produce an incorrect 
-// result when sorting numbers.
-
-
-
-
-
-
-
-// 😀7: challenge Time  🏁
+// 🏁 Challenge Time
 
 // 1: How to Sort the numbers in the array in ascending (up) and descending (down) order?
 
@@ -1068,11 +790,6 @@ console.log((a < b) || (b > 0) || (b > 0));
 // console.log(array1);
 
 
-
-
-
-
-
 // 2: sort the array in descending order
 
 // var fruits = ["Banana", "Orange", "Apple", "Mango"];
@@ -1085,129 +802,83 @@ console.log((a < b) || (b > 0) || (b > 0));
 // // the last array element becomes the first.
 
 
+// 4️⃣ Perform CRUD
 
-
-
-// 4️⃣ Array Subsection 4 👉 Perform CRUD
-
-// Array.prototype.push() 🙋‍♂️
-// The push() method adds one or more elements to the 
-// end of an array and returns the new length of the array.
-
-// const animals = ['pigs', 'goats', 'sheep'];
-
-// // const count = animals.push('chicken');
-// // console.log(count);
-
-// animals.push('chicken', 'cats','cow');
+// 🙋‍♂️ Array.prototype.push() => The push() method adds one or more elements to the end of an array and returns the new length of the array.
+// const animals = ['Pigs', 'Goats', 'Sheep'];
+// animals.push('Chicken', 'Cats','Cow');
 // console.log(animals);
 
-
-// Array.prototype.unshift() 🙋‍♂️
-// The unshift() method adds one or more elements to the 
-// beginning of an array and returns the new length of the array.
-
-
-
-// const animals = ['pigs', 'goats', 'sheep'];
-
-// const count = animals.unshift('chicken');
+// const count = animals.push('Dog');
 // console.log(count);
+
+
+// 🙋‍♂️ Array.prototype.unshift() => The unshift() method adds one or more elements to the beginning of an array and returns the new length of the array.
+// const animals = ['Pigs', 'Goats', 'Sheep'];
+// const count = animals.unshift('Chicken', 'Cats','Cow');
 // console.log(animals);
+// console.log(count);
 
-// animals.unshift('chicken', 'cats','cow');
-// console.log(animals);
-
-
-// 2nd example 
-
-// const myNumbers = [1,2,3,5];
-
-// myNumbers.unshift(4,6);
-// console.log(myNumbers);
+// const randomNum = [ 1, 2, 3, 5 ];
+// randomNum.unshift( 4, 6 );
+// console.log(randomNum);
 
 
-// Array.prototype.pop() 🙋‍♂️
-// The pop() method removes the last element from an array and returns 
-// that element. This method changes the length of the array.
-
-// const plants = ['broccoli', 'cauliflower',  'kale', 'tomato', 'cabbage'];
-
+// 🙋‍♂️ Array.prototype.pop() => The pop() method removes the last element from an array and returns that element. This method changes the length of the array.
+// const plants = ['Broccoli', 'Cauliflower',  'Kale', 'Tomato', 'Cabbage'];
 // console.log(plants);
 // console.log(plants.pop());
 // console.log(plants);
 
 
-// Array.prototype.shift() 🙋‍♂️
-// The shift() method removes the first element from an array and returns 
-// that removed element. This method changes the length of the array.
-
-// const plants = ['broccoli', 'cauliflower',  'kale', 'tomato', 'cabbage'];
+// 🙋‍♂️ Array.prototype.shift() => The shift() method removes the first element from an array and returns that removed element. This method changes the length of the array.
+// const plants = ['Broccoli', 'Cauliflower',  'Kale', 'Tomato', 'Cabbage'];
 // console.log(plants);
 // console.log(plants.shift());
 // console.log(plants);
 
 
+// 🏁 Challenge Time
 
-
-// 😀8: challenge Time 🏁
-
-// Array.prototype.splice() 🙋‍♂️
-// Adds and/or removes elements from an array.
+// 🙋‍♂️ Array.prototype.splice() => Add and/or remove elements from an array.
+// const months = ['Jan', 'march', 'April', 'June', 'July'];
 
 // 1: Add Dec at the end of an array?
-// 2: What is the return value of splice method?
-// 3: update march to March (update)?
-// 4: Delete June from an array?
-
-
-// sol1: 
-// const newMonth = months.splice(months.length,0,"Dec");
+// const newMonth = months.splice(months.length, 0, "Dec");
 // console.log(months);
 
-// sol2:
-// console.log(newMonth);
+// 2: What is the return value of splice method?
+// console.log(newMonth); // It shows an empty array when nothing is deleted through splice.
 
-// sol3: 
-// const months = ['Jan', 'march', 'April', 'June', 'July'];
+// 3: update march to March (update)?
+// const updatedMonth = months.splice(1, 1, "March");
+// console.log(months);
 
-// const indexOfMonth = months.indexOf('June');
-
-// if(indexOfMonth != -1){
-//   const updateMonth = months.splice(indexOfMonth,1,'june');
+// const indexOfMonth = months.indexOf('march');
+// if (indexOfMonth != -1) {
+//   const updateMonth = months.splice(indexOfMonth, 1, 'March');
 //   console.log(months);
-// }else{
+// } else {
 //   console.log('No such data found');
 // }
 
-
-// sol3: 
-// const months = ['Jan', 'march', 'April', 'June', 'July'];
-
-// const indexOfMonth = months.indexOf('April');
-
-// if(indexOfMonth != -1){
-//   const updateMonth = months.splice(indexOfMonth,2);
+// 4: Delete June from an array?
+// const indexOfMonth = months.indexOf('June');
+// if (indexOfMonth != -1) {
+//   const updateMonth = months.splice(indexOfMonth, 1);
 //   console.log(months);
 //   console.log(updateMonth);
-// }else{
+// } else {
 //   console.log('No such data found');
 // }
 
 
+// 5️⃣ Map and Reduce Method 
 
-
-
-// 5️⃣ Array Subsection 4 👉 Map and Reduce Method 
-
-// Array.prototype.map() 🙋‍♂️
-
+// 🙋‍♂️ Array.prototype.map() => Returns a new array containing the results of calling a function on every element in this array.
 // let newArray = arr.map(callback(currentValue[, index[, array]]) {
-//     // return element for newArray, after executing something
-//   }[, thisArg]);
-
-// Returns a new array containing the results of calling a 
-// function on every element in this array. 
+// // return element for newArray, after executing something
+// }[, thisArg]);
 
 // const array1 = [1, 4, 9, 16, 25];
 // num > 9
@@ -1228,41 +899,24 @@ console.log((a < b) || (b > 0) || (b > 0));
 // })
 // console.log(newArrfor);
 
-// It return new array without mutating the orignal array 
+// It return new array without mutating the orignal array
 
 
-// // **********************************************************************
+// 🏁 Challenge Time
 
-// // 👉 // 🤩 SUBSCRIBE TO THAPA TECHNICAL YOUTUBE CHANNEL 🤩
-//  👉 // 🤩  https://www.youtube.com/channel/UCwfaAHy4zQUb2APNOGXUCCA
-
-// // **********************************************************************
-
-
-
-
-
-// 😀9: challenge Time 🏁
-
-//  1: Find the square root of each element in an array?
-//  2: Multiply each element by 2 and return only those 
-//     elements which are greater than 10?
-
-// sol1: 
+// 1: Find the square root of each element in an array?
 // let arr = [25, 36, 49, 64, 81];
-
 // let arrSqr = arr.map((curElem) =>  Math.sqrt(curElem) )
 // console.log(arrSqr);
 
-// sol 2: 
+//  2: Multiply each element by 2 and return only those elements which are greater than 10?
 //  let arr = [2, 3, 4, 6, 8]; 
-
 //  let arr2 = arr.map((curElm) => curElm * 2).filter((curElem) => curElem > 10 ).reduce((accumulator, curElem) => {
 //       return accumulator += curElem;
 //     });
 //  console.log(arr2);
 
-// we can use the chaining too 
+// we can use the chaining too
 
 
 
