@@ -651,22 +651,22 @@
 **************************************************/
 
 // Array => An array is a special variable, which can hold more than one value. When we feel like storing multiple values in one variable then instead of var, we will use an Array. In JavaScript, we have an Array class, and arrays are the prototype of this class.
-// Example => var myFriends = ['ramesh',22,male,'arjun',20,male,'vishal',true, 52];
+// Example => var myDetails = ["Rahul" , "Kumar" , "Male" , 26 , "Male" , 0123456789 , true];
 
 
 // 1️⃣ Traversal in array => Navigate through an array.
 
-// var myFriends = ['Rahul','Ramesh','Arjun','Vishal'];
+// var myFriends = ["Raushan" , "Kundan" , "Ranjeet" , "Gaurav" , "Sandeep"];
 // console.log(myFriends); // If we want to get the all the data at a time.
+// console.log(myFriends.length); // If we want to check the length of elements of an array.
 // console.log(myFriends[0]); // If we want to get the single data at a time in First to Last order.
 // console.log(myFriends[myFriends.length - 1]); // If we want to get the single data at a time in Last to First order.
-// console.log(myFriends.length); // If we want to check the length of elements of an array.
 
 // for(var i = 0; i < myFriends.length; i++) { // We use "for" loop to navigate
 //   console.log(myFriends[i]);
 // }
 
-// After ES6 we have "for in" and "for of" loop too
+// After ES6 we have "for in" and "for of" loop too => for in (loop) returns index numbers of the elements for the array while for of (loop) returns the value of the elements for the array.
 
 // for(let elements in myFriends) { // We use "for in" loop to navigate
 //   console.log(elements);
@@ -678,43 +678,46 @@
 // Array.prototype.forEach() 🙋‍♂️ => Calls a function for each element in the array.
 
 // myFriends.forEach(function(element, index, array) {
-//   console.log(element + " index : " + index + " " + array);
+//   console.log("Index: " + index + " = " + element);
 // });
 // myFriends.forEach((element, index, array) => {
 //   console.log(element + " index : " + index + " " + array);
 // });
 
 
-// 2️⃣ Searching and Filter in an Array 
+// 2️⃣ Searching and Filter in an Array
 
 // 🙋‍♂️ Array.prototype.indexOf() => Returns the first (least) index of an element within the array equal to an element, or -1 if none is found. It search the element from the 0th index number.
-// var myFriendNames = ["Rahul", "Kumar", "Roy", "Web Designer", "Rahul", "UI Developer"];
-// console.log(myFriendNames.indexOf("Rahul"));
-// console.log(myFriendNames.indexOf("Rahul", 3));
+// var myFriends = ["Rahul" , "Raushan" , "Kundan" , "Ranjeet" , "Gaurav" , "Rahul" , "Sandeep"];
+// console.log(myFriends.indexOf("Rahul")); // Here "Rahul" is present on the 0th index for the very 1st time in the array. So output will be 0.
+// console.log(myFriends.indexOf("rahul")); // Here "rahul" is not present in the array. So output will be -1.
+// console.log(myFriends.indexOf("Rahul", 3)); // Here "Rahul" is present on the 5th index after 3rd index in the array. So output will be 5.
 
 
-// 🙋‍♂️ Array.prototype.lastIndexOf() => Returns the last (greatest) index of an element within the array equal to an element, or -1 if none is found. It search the element last to first.
-// var myFriendNames = ["Rahul", "Kumar", "Roy", "Web Designer", "Rahul", "UI Developer"];
-// console.log(myFriendNames.lastIndexOf("Rahul"));
-// console.log(myFriendNames.lastIndexOf("Rahul", 3));
+// 🙋‍♂️ Array.prototype.lastIndexOf() => Returns the last (greatest) index of an element within the array equal to an element, or -1 if none is found. It search the element from last to first.
+// var myFriends = ["Rahul" , "Raushan" , "Kundan" , "Ranjeet" , "Gaurav" , "Rahul" , "Sandeep"];
+// console.log(myFriends.lastIndexOf("Rahul"));
+// console.log(myFriends.lastIndexOf("rahul"));
+// console.log(myFriends.lastIndexOf("Rahul", 3));
 
 
 // 🙋‍♂️ Array.prototype.includes() => Determines whether the array contains a value, returning true or false as appropriate.
-// var myFriendNames = ["Rahul", "Kumar", "Roy", "Web Designer", "Rahul", "UI Developer"];
-// console.log(myFriendNames.includes("Rahul", 2));
-// console.log(myFriendNames.includes("UI Designer"));
+// var myFriends = ["Rahul" , "Raushan" , "Kundan" , "Ranjeet" , "Gaurav" , "Rahul" , "Sandeep"];
+// console.log(myFriends.includes("Rahul", 2));
+// console.log(myFriends.includes("UI Designer"));
 
 
-// 🙋‍♂️ Array.prototype.find() => Returns the found element in the array, if some element in the array satisfies the testing function, or undefined if not found. Only problem is that it return only one (Least Index) element.
-// arr.find(callback(element[, index[, array]])[, thisArg])
+// 🙋‍♂️ Array.prototype.find() => It return only one (Least Index) element found from the array when it satisfies the testing function, and it returns "Undefined" if nothing is found.
+// arr.find(callback(element, index, array), thisArg)
 
 // const prices = [ 200, 300, 350, 400, 450, 500, 600 ];
-// const findElem = prices.find((currVal) =>  currVal < 400); // price < 400
+// const findElem = prices.find((currVal) =>  currVal > 400); // price < 400
 // console.log(findElem);
 // console.log(prices.find((currVal) => currVal > 1200));
 
 
-// 🙋‍♂️ Array.prototype.findIndex() => Returns the found index in the array, if an element in the array satisfies the testing function, or -1 if not found.
+// 🙋‍♂️ Array.prototype.findIndex() => It returns the index of the found element from the array when it satisfies the testing function, and it returns "-1" if nothing is found.
+// const prices = [ 200, 300, 350, 400, 450, 500, 600 ];
 // console.log(prices.findIndex((currVal) => currVal > 400));
 // console.log(prices.findIndex((currVal) => currVal > 1200));
 
@@ -922,13 +925,9 @@
 
 
 
-// 👉 Reduce Method 
+// 👉 Reduce Method => The reduce() method executes a reducer function (that you provide) on each element of the array, resulting in single output value.
+// Flatten an array means to convert the 3d or 2d array into a single dimensional array 
 
-// flatten an array means to convert the 3d or 2d array into a 
-// single dimensional array 
-
-// The reduce() method executes a reducer function (that you provide) 
-// on each element of the array, resulting in single output value.
 
 // The reducer function takes four arguments:
 
@@ -951,7 +950,7 @@
 
 
 
-// How to fatten an array 
+// How to fatten an array ?
 // converting 2d and 3d array into one dimensional array 
 
 // const arr = [
