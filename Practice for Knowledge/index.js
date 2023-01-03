@@ -563,6 +563,10 @@
 
 // 👻 How to convert in into Fat Arrow Function 
 
+// const sum = () => {
+//   let a = 5, b = 6, sum = a + b;
+//   return `the sum of the two number is ${sum}`
+// }
 // const sum = () => `the sum of the two number is ${ (a = 5) + (b = 6) }`;
 // console.log(sum());
 
@@ -662,12 +666,12 @@
 // console.log(myFriends[0]); // If we want to get the single data at a time in First to Last order.
 // console.log(myFriends[myFriends.length - 1]); // If we want to get the single data at a time in Last to First order.
 
-// for(var i = 0; i < myFriends.length; i++) { // We use "for" loop to navigate
-//   console.log(myFriends[i]);
-// }
 
 // After ES6 we have "for in" and "for of" loop too => for in (loop) returns index numbers of the elements for the array while for of (loop) returns the value of the elements for the array.
 
+// for(var i = 0; i < myFriends.length; i++) { // We use "for" loop to navigate
+//   console.log(myFriends[i]);
+// }
 // for(let elements in myFriends) { // We use "for in" loop to navigate
 //   console.log(elements);
 // }
@@ -677,12 +681,9 @@
 
 // Array.prototype.forEach() 🙋‍♂️ => Calls a function for each element in the array.
 
-// myFriends.forEach(function(element, index, array) {
-//   console.log("Index: " + index + " = " + element);
-// });
-// myFriends.forEach((element, index, array) => {
-//   console.log(element + " index : " + index + " " + array);
-// });
+// myFriends.forEach(function(element) { console.log(element); });
+// myFriends.forEach(function(element, index) { console.log("Index: " + index + " = " + element); });
+// myFriends.forEach((element, index, array) => { console.log(element + " index : " + index + " " + array); });
 
 
 // 2️⃣ Searching and Filter in an Array
@@ -710,8 +711,8 @@
 // 🙋‍♂️ Array.prototype.find() => It return only one (Least Index) element found from the array when it satisfies the testing function, and it returns "Undefined" if nothing is found.
 // arr.find(callback(element, index, array), thisArg)
 
-// const prices = [ 200, 300, 350, 400, 450, 500, 600 ];
-// const findElem = prices.find((currVal) =>  currVal > 400); // price < 400
+// const prices = [ 200 , 300 , 350 , 400 , 450 , 500 , 600 ];
+// const findElem = prices.find((currVal) =>  currVal < 400); // price < 400
 // console.log(findElem);
 // console.log(prices.find((currVal) => currVal > 1200));
 
@@ -723,15 +724,10 @@
 
 
 // 🙋‍♂️ Array.prototype.filter() => Returns a new array containing all elements of the calling array for which the provided filtering function returns true.
-// const prices = [ 200, 300, 350, 400, 450, 500, 600 ];
-// const priceTag = prices.filter((elem, index) => {
-//   return elem < 400;
-// })
+// const prices = [ 200 , 300 , 350 , 400 , 450 , 500 , 600 ];
+// const priceTag = prices.filter( (elem) => elem <= 400 );
 // console.log(priceTag);
-// const newPriceTag = prices.filter((elem, index) => {
-//   return elem > 1200;
-// })
-// console.log(newPriceTag);
+// console.log(prices.filter((elem) => { return elem > 1200; }));
 
 
 // 3️⃣ How to sort an Array?
@@ -752,22 +748,22 @@
 
 // 1: How to Sort the numbers in the array in ascending (up) and descending (down) order?
 
-// compareFunction	Optional. 
+// Compare Function Optional. 
 // A function that defines an alternative sort order. The function should return a negative, zero, or positive value, depending on the arguments, like:
-// function(a, b){return a-b}
+// function(a , b){return a - b}
 
 // for asecnding order 
-// array1.sort(function(a,b){
-//     console.log(a,b);
-//     if(a>b){
+// array1.sort(function(a , b){
+//     console.log(a , b);
+//     if(a > b){
 //         return 1;
 //         // b comes first and then a 
 //     }
-//     if(a<b){
+//     if(a < b){
 //         // a comes first and then b 
 //         return -1;
 //     }
-//     if(a==b){
+//     if(a == b){
 //         // No changes
 //         return 0;
 //     }
@@ -805,14 +801,13 @@
 // // the last array element becomes the first.
 
 
-// 4️⃣ Perform CRUD
+// 4️⃣ Perform CRUD( Create, Read, Update and Delete )
 
 // 🙋‍♂️ Array.prototype.push() => The push() method adds one or more elements to the end of an array and returns the new length of the array.
 // const animals = ['Pigs', 'Goats', 'Sheep'];
 // animals.push('Chicken', 'Cats','Cow');
-// console.log(animals);
-
 // const count = animals.push('Dog');
+// console.log(animals);
 // console.log(count);
 
 
@@ -830,8 +825,10 @@
 // 🙋‍♂️ Array.prototype.pop() => The pop() method removes the last element from an array and returns that element. This method changes the length of the array.
 // const plants = ['Broccoli', 'Cauliflower',  'Kale', 'Tomato', 'Cabbage'];
 // console.log(plants);
+// console.log(plants.length);
 // console.log(plants.pop());
 // console.log(plants);
+// console.log(plants.length);
 
 
 // 🙋‍♂️ Array.prototype.shift() => The shift() method removes the first element from an array and returns that removed element. This method changes the length of the array.
@@ -844,6 +841,8 @@
 // 🏁 Challenge Time
 
 // 🙋‍♂️ Array.prototype.splice() => Add and/or remove elements from an array.
+// arr.splice( Starting Element , Delete Count , New String )
+
 // const months = ['Jan', 'march', 'April', 'June', 'July'];
 
 // 1: Add Dec at the end of an array?
@@ -851,9 +850,10 @@
 // console.log(months);
 
 // 2: What is the return value of splice method?
-// console.log(newMonth); // It shows an empty array when nothing is deleted through splice.
+// => It will return the Deleted Value from the Array. It shows an empty array when nothing is deleted through splice.
+// console.log(newMonth);
 
-// 3: update march to March (update)?
+// 3: How to update "march" to "March"?
 // const updatedMonth = months.splice(1, 1, "March");
 // console.log(months);
 
@@ -878,196 +878,101 @@
 
 // 5️⃣ Map and Reduce Method 
 
-// 🙋‍♂️ Array.prototype.map() => Returns a new array containing the results of calling a function on every element in this array.
+// 🙋‍♂️ Array.prototype.map() => Returns a new array containing the results of calling a function on every element in this array. It return new array without mutating the orignal array.
 // let newArray = arr.map(callback(currentValue[, index[, array]]) {
-// // return element for newArray, after executing something
+//   return element for newArray, after executing something
 // }[, thisArg]);
 
-// const array1 = [1, 4, 9, 16, 25];
-// num > 9
-// let newArr = array1.map((curElem,index,arr) => {
-//     return curElem > 9;
+// const array1 = [1, 4, 9, 16, 25]; // num > 9
+// let newArr = array1.map((curElem) => {
+//   return curElem > 9;
 // })
 // console.log(array1);
 // console.log(newArr);
 
-// let newArr = array1.map((curElm, index, arr) => {
-//     return `Index no = ${index} and the value is ${curElm} belong to ${arr} `
-// }).reduce().
-// console.log(newArr);
-
+// let newArr2 = array1.map((curElm, index, arr) => {
+//   return `Index no = ${index} and the value is ${curElm} belong to ${arr} `
+// })
+// console.log(newArr2);
 
 // let newArrfor = array1.forEach((curElm, index, arr) => {
 //   return `Index no = ${index} and the value is ${curElm} belong to ${arr} `
 // })
 // console.log(newArrfor);
 
-// It return new array without mutating the orignal array
-
 
 // 🏁 Challenge Time
 
 // 1: Find the square root of each element in an array?
 // let arr = [25, 36, 49, 64, 81];
-// let arrSqr = arr.map((curElem) =>  Math.sqrt(curElem) )
+// let arrSqr = arr.map((curElem) =>  Math.sqrt(curElem))
 // console.log(arrSqr);
 
 //  2: Multiply each element by 2 and return only those elements which are greater than 10?
-//  let arr = [2, 3, 4, 6, 8]; 
-//  let arr2 = arr.map((curElm) => curElm * 2).filter((curElem) => curElem > 10 ).reduce((accumulator, curElem) => {
-//       return accumulator += curElem;
-//     });
-//  console.log(arr2);
-
-// we can use the chaining too
+// let arr = [213, 316, 465, 656, 856]; 
+// let arr2 = arr.map((curElm) => curElm * 2).filter((curElem) => curElem > 1000).reduce((accumulator, curElem) => accumulator += curElem);
+// console.log(arr2);
 
 
+// 👉 Reduce Method => The reduce() method executes a reducer function (that you provide) on each element of the array, resulting in single output value. Flatten an array means to convert the 3d or 2d array into a single dimensional array.
+/**
+  The reducer function takes four arguments:
+  1. Accumulator (works as a container for the process)
+  2. Current Value
+  3. Current Index
+  4. Source Array
+**/
 
-
-
-// 👉 Reduce Method => The reduce() method executes a reducer function (that you provide) on each element of the array, resulting in single output value.
-// Flatten an array means to convert the 3d or 2d array into a single dimensional array 
-
-
-// The reducer function takes four arguments:
-
-// Accumulator
-// Current Value
-// Current Index
-// Source Array
-
-// 4 subj = 1sub= 7
-// 3dubj = [5,6,2]
-
-// let arr = [5,6,2];
-
-// let sum = arr.reduce((accumulator, curElem) => {
-//         debugger;
-//       return accumulator += curElem;
-// },7)
+// let arr = [5, 6, 2];
+// let sum = arr.reduce((accumulator, curElem) => accumulator += curElem, 7)
 // console.log(sum);
 
 
+// 👉 How to fatten an array ? => While converting 2d and 3d array into one dimensional array using array.reduce, it won't be able to convert the nested elements. 
 
+// const arr = [ ['zone_1', 'zone_2'] , ['zone_3', 'zone_4'] , ['zone_5', 'zone_6'] , ['zone_7' , ['zone_8' , ['zone_9', 'zone_10'] ] ] ];
 
-// How to fatten an array ?
-// converting 2d and 3d array into one dimensional array 
-
-// const arr = [
-//         ['zone_1', 'zone_2'],
-//         ['zone_3', 'zone_4'],
-//         ['zone_5', 'zone_6'],
-//         ['zone_7', ['zone_7', ['zone_7', 'zone_8']]]
-//     ];
-
-// // let flatArr = arr.reduce((accum, currVal)  => { 
-// //           return accum.concat(currVal);
-// // })
-
-// console.log(arr.flat(Infinity));
-
-
-
-
-
-
-
+// let flatArr = arr.reduce((accum, currVal)  => { return accum.concat(currVal); })
 // console.log(flatArr);
-
+// console.log(arr.flat(Infinity));
 
 // const arr = [ ['zone_1', 'zone_2'], ['zone_3', ['zone_1', 'zone_2', ['zone_1', 'zone_2']]] ];
 // console.log(arr.flat(3));
 // console.log(arr);
 
 
+/**************************************************
+  Section 08 👉 Strings in JavaScript
+**************************************************/
 
+// Strings => A JavaScript string is zero or more characters written inside quotes. JavaScript strings are used for storing and manipulating text. You can use single or double quotes. Strings can be created as primitives using string literals, or as an object by using the String() constructor.
 
-
-/**** Section 7👉 Strings in JavaScript  ****/
-
-// A JavaScript string is zero or more characters written inside quotes.
-
-// JavaScript strings are used for storing and manipulating text.
-// You can use single or double quotes
-
-// Strings can be created as primitives, 
-// from string literals, or as objects, using the String() constructor
-
-// let myName = "vinod thapa";
-// let myChannelName = 'vinod thapa';
-
-// // let ytName = new String("Thapa Technical");
-// let ytName = 'thapa technical';
-
+// let myName = new String("Rahul Kumar"); // Mostly discouraged for using.
+// let myName = 'Rahul Kumar ', "Rahul Kumar";
 // console.log(myName);
-// console.log((ytName));
 
 
-
-// 👉 How to find the length of a string
-// String.prototype.length 🙋‍♂️
-// Reflects the length of the string. 
-
-// let myName = "vinod thapa";
+// 🙋‍♂️ How to find the length of a string? => To reflect the length of the string we use "String.prototype.length".
+// let myName = "Rahul Kumar";
 // console.log(myName.length);
 
 
-
 // 👉 Escape Character
-
-// let anySentence = "We are the so-called \"Vikings\" from the north.";
-// console.log(anySentence);
-
-// // if you dont want to mess, simply use the alternate quotes 
-
-// let anySentence =  " We are the so-called 'Vikings' from the north. ";
+// let escChar = "We are the so-called \"Vikings\" from the north.";
+// console.log(escChar);
+// var anySentence = "We are the so-called 'Vikings' from the north.";
 // console.log(anySentence);
 
 
+// 👉 How to find a String in a String? => Exactly same as array mathedology, we use indexOf() and lastIndexOf() for this.
 
+// 🙋‍♂️ String.prototype.indexOf(searchValue [, fromIndex]) => Returns the first occurrence of a specified text in a string, or -1 if not found.
+// const myBioData = 'I am the Rahul Kumar';
+// console.log(myBioData.indexOf("a", 6));
 
-
-
-
-
-
-// 👉 Finding a String in a String
-
-// String.prototype.indexOf(searchValue [, fromIndex]) 🙋‍♂️
-
-// The indexOf() method returns the index of (the position of) the first
-//  occurrence of a specified text in a string
-
-// const myBioData =  'I am the thapa Technical';
-// console.log(myBioData.indexOf("t", 6));
-
-
-// // JavaScript counts positions from zero.
-// // 0 is the first position in a string, 1 is the second, 2 is the third ...
-
-
-
-
-
-
-// // String.prototype.lastIndexOf(searchValue [, fromIndex]) 🙋‍♂️
-// // Returns the index within the calling String object of the 
-// // last occurrence of searchValue, or -1 if not found.
-
-
-// const myBioData =  'I am the thapa Technical';
-// console.log(myBioData.lastIndexOf("t", 6));
-
-
-
-
-
-
-
-
-
-
-
+// 🙋‍♂️ String.prototype.lastIndexOf(searchValue [, fromIndex]) => Returns the last occurrence of searchValue, or -1 if not found.
+// const myBioData =  'I am the Rahul Kumar';
+// console.log(myBioData.lastIndexOf("a", 6));
 
 
 // 👉 Searching for a String in a String
@@ -1077,7 +982,7 @@
 // The search() method searches a string for a specified 
 // value and returns the position of the match
 
-// const myBioData =  'I am the thapa Technical';
+// const myBioData =  'I am the Rahul Kumar';
 // let sData = myBioData.search("technical");
 // console.log(sData);
 
