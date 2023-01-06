@@ -975,49 +975,32 @@
 // console.log(myBioData.lastIndexOf("a", 6));
 
 
-// 👉 Searching for a String in a String
+// 👉 Searching for a String in a String => Exactly same as indexOf() and lastIndexOf() but it won't take the second argument.
 
-// String.prototype.search(regexp) 🙋‍♂️
-
-// The search() method searches a string for a specified 
-// value and returns the position of the match
-
+// 🙋‍♂️ String.prototype.search(regexp) => The search() method searches a string for a specified value and returns the position of the match.
 // const myBioData =  'I am the Rahul Kumar';
-// let sData = myBioData.search("technical");
+// let sData = myBioData.search("Kumar"); // The search() method cannot take a second start position argument.
 // console.log(sData);
 
 
-
-// The search() method cannot take a second start position argument.
-
-
-
-
 // 👉 Extracting String Parts
+/**
+  There are 3 methods for extracting a part of a string:
+  1. slice(start, end)
+  2. substring(start, end)
+  3. substr(start, length)
+**/
 
-// There are 3 methods for extracting a part of a string:
-
-// slice(start, end)
-// substring(start, end)
-// substr(start, length)
-
-// The slice() Method 🙋‍♂️
-// slice() extracts a part of a string and returns the extracted part 
-// in a new string.
-
-// The method takes 2 parameters: the start position, 
-// and the end position (end not included).
+// 🙋‍♂️ The slice() Method => The slice() extracts a part of a string and returns the extracted part in a new string. The method takes 2 parameters: the start position, and the end position (end not included).
 
 // var str = "Apple, Bananaa, Kiwi, mango";
 
-// // let res = str.slice(0,4);
+// let res = str.slice(0,4);
 // let res = str.slice(7);
 // console.log(res);
 
 
-// The slice() method selects the elements starting at the 
-// given start argument, and ends at, but does not include, 
-// the given end argument.
+// The slice() method selects the elements starting at the given start argument, and ends at, but does not include, the given end argument.
 
 // Note: The original array will not be changed.
 // Remember: JavaScript counts positions from zero. First position is 0.
